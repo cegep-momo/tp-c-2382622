@@ -1,4 +1,4 @@
-#include <fstream>
+#include <fstream> // filemanager.cpp
 #include <iostream>
 #include <filesystem>
 #include "filemanager.h"
@@ -103,7 +103,7 @@ bool FileManager::loadUsersFromFile(Library& library) {
     return true;
 }
 
-// Check if file exists
+// Check if file  exists
 bool FileManager::fileExists(const string& filename) {
     ifstream file(filename);
     return file.good();

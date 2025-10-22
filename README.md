@@ -7,7 +7,7 @@ Voici les lignes de commandes pour compiler le projet:
 $ mkdir build
 $ cd build
 $ cmake ..
-$ make
+$ make 
 ```
 
 # Répertoire data

@@ -20,6 +20,7 @@ bool Library::removeBook(const string& isbn) {
             return book->getISBN() == isbn;
         });
     
+    
     if (it != books.end()) {
         books.erase(it);
         return true;

@@ -1,0 +1,5 @@
+*Medium phone google play : Android 14 ("UpsideDownCake") - Resolution px '1080 x 2400' - Resolution dp '412 x 915'
+
+"Medium Tablet google play : Android 14 ("UpsideDownCake") - Resolution px '2560 x 1600' - Resolution dp '1280 x 800'
+
+

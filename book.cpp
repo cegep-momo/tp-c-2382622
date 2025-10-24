@@ -1,11 +1,17 @@
 #include "book.h"
 #include <istream>
 
+
 using namespace std;
 
 // Constructor - livre disonible sans emprunteur
+
+Book::Book()
+    : title(""), author(""), isbn(""), isAvailable(true), borrowerName("") {}
 Book::Book(const string& title, const string& author, const string& isbn) 
     : title(title), author(author), isbn(isbn), isAvailable(true), borrowerName("") {}
+
+
 
 // --- Getters ---
 
@@ -70,4 +76,8 @@ string Book::toString() const {
     return "Titre: " + title + "\nAuteur: " + author + "\nISBN: " + isbn + "\nStatut: " + status;
 }
 
+// Format pour sauvegarde dans fichier
+string Book::toFileFormat() const {
+    return title + "|" + author + "|" + isbn + "|" + (isAvailable ? "1" : "0") + "|" + borrowerName;
+}
 

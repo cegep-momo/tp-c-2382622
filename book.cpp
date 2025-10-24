@@ -49,13 +49,18 @@ void Book::setBorrowerName(const string& name) {
 // --- Methods ---
 
 
-// Emprunter le livre 
+// Emprunter le livre - définit le nom de l’emprunteur, livre non disponible
 void Book::checkOut(const string& borrower) {
     if (!borrower.empty()) {
         borrowerName = borrower;
         isAvailable = false;
     }
 }
-     
+   
+// Retourner le livre - emprentueyr vide, livre disponible
+void Book::returnBook() {
+    borrowerName.clear();
+    isAvailable = true;
+}
 
 

@@ -1,4 +1,5 @@
 #include "book.h"
+#include <istream>
 
 using namespace std;
 
@@ -57,10 +58,16 @@ void Book::checkOut(const string& borrower) {
     }
 }
    
-// Retourner le livre - emprentueyr vide, livre disponible
+// Retourner le livre - emprenteur vide, livre disponible
 void Book::returnBook() {
     borrowerName.clear();
     isAvailable = true;
+}
+
+// Représentation textuelle du livre
+string Book::toString() const {
+    string status = isAvailable ? "Disponible" : "Emprunté par " + borrowerName;
+    return "Titre: " + title + "\nAuteur: " + author + "\nISBN: " + isbn + "\nStatut: " + status;
 }
 
 

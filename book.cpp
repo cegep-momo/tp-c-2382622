@@ -1,5 +1,6 @@
 #include "book.h"
 #include <istream>
+#include <iostream>
 
 
 using namespace std;
@@ -80,4 +81,10 @@ string Book::toString() const {
 string Book::toFileFormat() const {
     return title + "|" + author + "|" + isbn + "|" + (isAvailable ? "1" : "0") + "|" + borrowerName;
 }
+
+// Afficher une ligne 
+void Book::fromFileFormat(const string& line) { 
+    cout << line << endl;
+}
+
 

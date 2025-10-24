@@ -45,3 +45,17 @@ void Book::setBorrowerName(const string& name) {
     borrowerName = name; 
     if (!name.empty()) isAvailable = false;
 }
+
+// --- Methods ---
+
+
+// Emprunter le livre 
+void Book::checkOut(const string& borrower) {
+    if (!borrower.empty()) {
+        borrowerName = borrower;
+        isAvailable = false;
+    }
+}
+     
+
+

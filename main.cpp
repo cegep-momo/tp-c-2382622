@@ -99,13 +99,6 @@ int main() {
                 } else {
                   cout << "Suppression annulée.\n";
                 }
-
-
-                if (library.removeBook(isbn)) {
-                    cout << "Livre supprimé avec succès !\n";
-                } else {
-                    cout << "Livre non trouvé.\n";
-                }
                 pauseForInput();
                 break;
             }

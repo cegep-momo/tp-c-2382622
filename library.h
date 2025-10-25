@@ -27,6 +27,8 @@ public:
     vector<Book*> searchBooksByAuthor(const string& author);
     vector<Book*> getAvailableBooks();
     vector<Book*> getAllBooks();
+    void sortBooksByTitle();
+    void sortBooksByAuthor();
     
     // User management
     void addUser(const User& user);
@@ -46,6 +48,9 @@ public:
     int getTotalBooks() const;
     int getAvailableBookCount() const;
     int getCheckedOutBookCount() const;
+
+
+
 };
 
 #endif

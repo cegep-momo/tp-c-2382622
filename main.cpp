@@ -177,18 +177,35 @@ int main() {
                 
                 if (library.checkOutBook(isbn, userId)) {
                     cout << "Livre emprunté avec succès !\n";
+
+                    User* user = library.findUserById(userId);
+                    string nomUser = user ? user->getName() : "Inconnu(pas normal)";
+
+                    library.enregistrerLog("EMPRUNT", isbn, nomUser);
+
                 } else {
                     cout << "Erreur : Impossible d'emprunter le livre. Vérifiez l'ISBN, l'ID utilisateur et la disponibilité du livre.\n";
                 }
+
                 pauseForInput();
                 break;
             }
             
             case 10: { // Return Book
                 string isbn = getInput("Entrez l'ISBN du livre à retourner : ");
+                string nomUser = "Inconnu (pas normal)";
+
+                for (User* user : library.getAllUsers()) {
+                    if (user->hasBorrowedBook(isbn)) {
+                        nomUser = user->getName();
+                        break;
+                    }
+                }
                 
                 if (library.returnBook(isbn)) {
                     cout << "Livre retourné avec succès !\n";
+                    library.enregistrerLog("RETOUR", isbn, nomUser);
+
                 } else {
                     cout << "Erreur : Impossible de retourner le livre. Vérifiez l'ISBN et que le livre est bien emprunté.\n";
                 }

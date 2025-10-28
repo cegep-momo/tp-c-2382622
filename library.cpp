@@ -2,6 +2,8 @@
 #include <algorithm>
 
 #include "library.h"
+#include <ctime>
+#include <fstream>
 
 using namespace std;
 
@@ -216,5 +218,34 @@ void Library::sortBooksByAuthor() {
         [](const unique_ptr<Book>& a, const unique_ptr<Book>& b) {
             return a->getAuthor() < b->getAuthor(); 
         });
+}
+// Fonction qui détermine la date et l'heure actuelles sous forme de chaîne
+string obtenirDateHeure() {
+    time_t tempsActuel = time(nullptr);
+    char texteFormate[20];
+    strftime(texteFormate, sizeof(texteFormate), "%Y-%m-%d %H:%M:%S", localtime(&tempsActuel));
+    return texteFormate;
+}
+
+// Fonction pour enregistrer une opération d'enprunt ou de retour dans un fichiers
+void enregistrerLog(const string& operation, const string& isbn, const string& nomUtilisateur) {
+    
+    // Recherche sur la gestion des fichiers en C++
+
+    ofstream fichierLog("logs.txt", ios::app); // Écriture dans le fichier sans écraser
+
+    if (!fichierLog.is_open()) {
+        cout << "Erreur (impossible d'ouvrir le fichier de logs)" << endl;
+        return;
+    }
+
+    // Affichage dans le fichier du log
+    fichierLog << obtenirDateHeure()
+               << " - Opération : " << operation
+               << " - ISBN : " << isbn
+               << " - Utilisateur : " << nomUtilisateur
+               << endl;
+
+    fichierLog.close();
 }
 

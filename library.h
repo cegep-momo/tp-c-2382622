@@ -38,6 +38,7 @@ public:
     // Library operations
     bool checkOutBook(const string& isbn, const string& userId);
     bool returnBook(const string& isbn);
+    
     void enregistrerLog(const string& operation, const string& isbn, const string& nomUtilisateur);
     
     

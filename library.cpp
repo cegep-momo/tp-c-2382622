@@ -228,7 +228,7 @@ string obtenirDateHeure() {
 }
 
 // Fonction pour enregistrer une opération d'enprunt ou de retour dans un fichiers
-void enregistrerLog(const string& operation, const string& isbn, const string& nomUtilisateur) {
+void Library:: enregistrerLog(const string& operation, const string& isbn, const string& nomUtilisateur) {
     
     // Recherche sur la gestion des fichiers en C++
 

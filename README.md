@@ -1,3 +1,6 @@
+# NOM DE L'ÉLÈVE - KOUANDA YUAN DIETRICH GR:01
+
+
 # Construire le projet
 Vous pouvez utiliser un dev container de base C++ de VScode.
 Le projet utilise cmake, pensez à l'inclure dans votre dev container.
@@ -39,6 +42,8 @@ std::unique_ptr<Book> livre(new Book("Petite ville"));
 
 Une solution plus adaptée pour gérer une très grande bibliothèque serait d’utiliser une base de données au lieu de simples fichiers texte. Actuellement, le programme enregistre les livres et les utilisateurs dans des fichiers, mais cette méthode est difficile à maintenir quand il y a beaucoup d’informations. Une base de données comme SQLite (local) ou tous autres bases de données en ligne permettraient de stocker, classer et retrouver rapidement des millions de livres. Grâce à elle, on pourrait retrouver un livre rapidemement via des index même dans une grande collection et éviter les doublons ou les erreurs (comme prêter le même livre à deux personnes en même temps) nottamment à partir de contraintes et de transactions sécurisées.
 Pour que le programme C++ puisse communiquer avec cette base, on pourrait créer une API (une sorte de “pont” entre le C++ et la base). Cette API pourrait être développée dans un autre langage plus adapté à la gestion web, comme Python par exemple. Le programme C++ enverrait des requêtes à l’API (par exemple pour ajouter, supprimer ou chercher un livre) et recevrait les résultats sous forme de JSON. Cela veut dire qu’on ne change pas le menu ni la façon d’utiliser le programme C++ mais on change seulement la manière dont les données sont gérées. Si un jour la bibliothèque d’Alexandrie contient des millions de livres, la base de données pourra être hébergée sur un serveur distant (ou dans le cloud) pour permettre à plusieurs utilisateurs de l’utiliser en même temps, depuis différents ordinateurs ou même une application mobile. On pourrait aussi ajouter un moteur de recherche intelligent (comme pour proposer une recherche plus rapide, avec autocomplétion). Donc, C++ va gérer l’interface, API pour la communication (base + interface) et base de données pour le stockage. Cela rendrait le projet plus solide, prêt à évoluer et capable de gérer des millions de livres et d’utilisateurs.
+
+# NOM DE L'ÉLÈVE - KOUANDA YUAN DIETRICH GR:01
 
 
 
